@@ -11,8 +11,7 @@ set backspace=indent,eol,start
 set ambiwidth=double
 
 "escが遠いの代用する。
-noremap <C-j> <esc>
-noremap! <C-j> <esc>
+inoremap <silent> jj <ESC>
 " カーソルの左右移動で行末次の行の行頭への移動が可能になる
 set whichwrap=b,s,h,l,<,>,[,],~ 
 " カーソルラインをハイライト
@@ -32,8 +31,8 @@ endif
 set runtimepath+=/Users/hiroki/.vim/bundle//repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/hiroki/.vim/bundle/')
-  call dein#begin('/Users/hiroki/.vim/bundle/')
+if dein#load_state('/Users/hiroki/.vim/bundle')
+  call dein#begin('/Users/hiroki/.vim/bundle')
 
   " Let dein manage dein
   " Required:
@@ -60,6 +59,10 @@ endif
 " Required:
 filetype plugin indent on
 syntax enable
+
+if dein#check_install()
+    call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
