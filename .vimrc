@@ -22,6 +22,17 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
+" <Space>を無効化
+nnoremap <Space> <Nop>
+" <Leader>を<Space>に変更
+let mapleader = "\<Space>"
+" <Space>wで保存
+nnoremap <Leader>w :w<CR>
+" <Space>qで終了
+nnoremap <Leader>q :q<CR>
+" <Space>fで終了
+nnoremap <Leader>f :wq<CR>
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -39,14 +50,15 @@ if dein#load_state('/Users/hiroki/.vim/bundle')
   call dein#add('/Users/hiroki/.vim/bundle//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('flazz/vim-colorschemes')
 
-  " 補完系
-  call dein#add('Shougo/neocomplete.vim')
-  " indentを視覚化
-  call dein#add('nathanaelkane/vim-indent-guides')
+  " tomlの
+  let g:config_dir = expand('~/dot-files')
+  let s:toml = g:config_dir . '/dein.toml'
+  let s:lazy_toml = g:config_dir . '/dein_lazy.toml'
+
+  call dein#load_toml(s:toml, {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -65,34 +77,3 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
-" pluginの設定----------------------------
-" カラースキーム
-colorscheme molokai
-
-" 補完系 neocomplete, neosnippetの設定
-" Vim起動時にneocompleteを有効にする
-let g:neocomplete#enable_at_startup = 1
-" smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
-let g:neocomplete#enable_smart_case = 1
-" 補完を取り消し
-inoremap <expr><C-g>     neocomplete#undo_completion()
-" 補完候補の共通部分を補完
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-" 展開
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)"
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" indent highligt
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 2
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=blue ctermbg=246
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=246
-

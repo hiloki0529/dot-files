@@ -1,0 +1,21 @@
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+# indentを視覚化
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_start_level = 2
+  let g:indent_guides_guide_size = 2
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=blue ctermbg=246
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray ctermbg=246
+'''
+
+[[plugins]]
+# カラースキーム
+repo = 'flazz/vim-colorschemes'
+hook_add = '''
+  colorscheme molokai
+'''
