@@ -33,6 +33,9 @@ nnoremap <Leader>q :q<CR>
 " <Space>fで保存して終了
 nnoremap <Leader>f :wq<CR>
 
+" スペース2回でカーソル下の単語をハイライトする
+nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
