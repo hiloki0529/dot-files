@@ -19,3 +19,10 @@ repo = 'flazz/vim-colorschemes'
 hook_add = '''
   colorscheme molokai
 '''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    nnoremap <Space>e :<C-u>NERDTreeToggle<CR>
+    let NERDTreeIgnore = ['\.pyc$']
+'''

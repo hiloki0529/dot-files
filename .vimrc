@@ -30,6 +30,8 @@ let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 " <Space>qで終了
 nnoremap <Leader>q :q<CR>
+" qで終了
+nnoremap q :q<CR>
 " <Space>fで保存して終了
 nnoremap <Leader>f :wq<CR>
 
