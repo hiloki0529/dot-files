@@ -33,7 +33,7 @@ hook_source = '''
 on_ft = ['python']
 
 [[plugins]]
-# lexima
-# 括弧補完
-repo = 'cohama/lexima.vim'
-on_i = 1
+repo = 'baabelfish/nvim-nim'
+#hook_source = '''
+#let g:nvim_nim_highlighter_semantics=1
+#'''

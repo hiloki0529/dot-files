@@ -37,6 +37,13 @@ nnoremap <Leader>f :wq<CR>
 
 " スペース2回でカーソル下の単語をハイライトする
 nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+" #キーを押すと、カーソル下の単語をハイライトしてから置換後文字列を入力する状態
+nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+
+set wildmenu " コマンドモードの補完
+set history=5000 " 保存するコマンド履歴の数<Paste>
+
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 "dein Scripts-----------------------------
 if &compatible
