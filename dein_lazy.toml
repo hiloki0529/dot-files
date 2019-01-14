@@ -1,4 +1,5 @@
 [[plugins]]
+
 # neocomplete
 # 補完
 repo = 'Shougo/deoplete.nvim'
@@ -33,7 +34,14 @@ hook_source = '''
 on_ft = ['python']
 
 [[plugins]]
-repo = 'baabelfish/nvim-nim'
-#hook_source = '''
-#let g:nvim_nim_highlighter_semantics=1
-#'''
+repo = 'mileszs/ack.vim'
+hook_add = '''
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+    " カーソル下の単語をハイライトしてからAckする
+    nmap <silent> <Leader>n "zyiw:let @/ = @z<CR>:set hlsearch<CR>:Ack <C-r>/<CR>
+    " @キーを押すと、カーソル下の単語をハイライトしてからAckしてから置換後文字列を入力する状態
+    nmap @ <Leader>n:Qfreplace<CR>#
+'''
+
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
