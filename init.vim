@@ -45,21 +45,24 @@ set history=5000 " 保存するコマンド履歴の数<Paste>
 
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
+" python
+let g:python3_host_prog = $PYENV_PATH . '/versions/neovim3/bin/python'
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=/Users/hiroki/.vim/bundle//repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/hiroki/.local/share/dein//repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/hiroki/.vim/bundle')
-  call dein#begin('/Users/hiroki/.vim/bundle')
+if dein#load_state('/home/hiroki/.local/share/dein/')
+  call dein#begin('/home/hiroki/.local/share/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/hiroki/.vim/bundle//repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/hiroki/.local/share/dein//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
 
