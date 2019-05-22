@@ -46,7 +46,7 @@ set history=5000 " 保存するコマンド履歴の数<Paste>
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " python
-let g:python3_host_prog = $PYENV_PATH . '/versions/neovim3/bin/python'
+let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
 
 "dein Scripts-----------------------------
 if &compatible

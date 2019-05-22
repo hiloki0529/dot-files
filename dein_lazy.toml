@@ -45,3 +45,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
