@@ -32,3 +32,11 @@ $ ln -s $HOME/dot-files/init.vim $HOME/.config/nvim/init.vim
 ```
 :call dein#install()
 ```
+
+## Gitの設定
+```bash
+git config --global user.name "First-name Family-name"
+git config --global user.email "username@example.com"
+
+git config --global core.editor 'vim -c "set fenc=utf-8"'
+```
