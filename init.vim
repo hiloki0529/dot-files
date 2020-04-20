@@ -54,20 +54,20 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/hiroki/.local/share/dein//repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/hiroki/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/hiroki/.local/share/dein/')
-  call dein#begin('/home/hiroki/.local/share/dein/')
+if dein#load_state('/Users/hiroki/.local/share/dein')
+  call dein#begin('/Users/hiroki/.local/share/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/hiroki/.local/share/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/hiroki/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
 
   " tomlの
-  let g:config_dir = expand('~/dot-files')
+  let g:config_dir = expand('~/.dot-files')
   let s:toml = g:config_dir . '/dein.toml'
   let s:lazy_toml = g:config_dir . '/dein_lazy.toml'
 
